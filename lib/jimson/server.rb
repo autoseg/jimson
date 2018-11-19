@@ -71,7 +71,7 @@ module Jimson
     # Starts the server so it can process requests
     #
     def start
-      use Rack::Timeout, service_timeout: 600
+      use Rack::Timeout, service_timeout: 8000
       Rack::Server.start(opts.merge(
         :app    => self,
         :Host   => @host,
