@@ -102,8 +102,10 @@ module Jimson
       rescue Server::Error::ParseError, Server::Error::InvalidRequest => e
         response = error_response(e)
       rescue Server::Error => e
+        puts "server error #{e}"
         response = error_response(e, request)
       rescue StandardError, Exception => e
+        puts "standart error #{e}"
         response = error_response(Server::Error::InternalError.new(e))
       end
 
