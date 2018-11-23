@@ -46,8 +46,8 @@ module Jimson
         'id'      => self.class.make_id
       })
 
-      puts "-------------------------------> Vou chamar o RestClient url: #{@url}, data: #{post_data}, opts: #{@opts}"
       resp = RestClient.post(@url, post_data, @opts)
+      resp = RestClient::Request.execute(:method => :post, :url => @url, :timeout => @opts)
       if resp.nil? || resp.body.nil? || resp.body.empty?
         raise Client::Error::InvalidResponse.new
       end
