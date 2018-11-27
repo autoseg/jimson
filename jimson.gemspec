@@ -13,6 +13,7 @@ spec = Gem::Specification.new do |s|
   s.add_dependency("rest-client", ">= 1.6.7")
   s.add_dependency("multi_json", ">= 1.7.6")
   s.add_dependency("rack", "~> 1.4.5")
+  s.add_dependency("rack-timeout", "~> 0.5.1")
 
   s.files = %w[
     VERSION
