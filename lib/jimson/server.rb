@@ -5,7 +5,9 @@ require 'multi_json'
 require 'jimson/handler'
 require 'jimson/router'
 require 'jimson/server/error'
-require "rack-timeout"
+require 'rack-timeout'
+
+use Rack::Timeout, service_timeout: 8000
 
 module Jimson
   class Server
@@ -71,7 +73,6 @@ module Jimson
     # Starts the server so it can process requests
     #
     def start
-      use Rack::Timeout, service_timeout: 8000
       Rack::Server.start(opts.merge(
         :app    => self,
         :Host   => @host,
