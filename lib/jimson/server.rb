@@ -5,9 +5,6 @@ require 'multi_json'
 require 'jimson/handler'
 require 'jimson/router'
 require 'jimson/server/error'
-require 'rack-timeout'
-
-use Rack::Timeout, service_timeout: 8000
 
 module Jimson
   class Server
