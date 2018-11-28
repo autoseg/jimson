@@ -24,7 +24,6 @@ GEM
     rack (1.4.5)
     rack-test (0.6.2)
       rack (>= 1.0)
-    rack-timeout (0.5.1)
     rake (10.0.4)
     rcov (1.0.0)
     rdoc (4.0.1)
@@ -53,11 +52,10 @@ PLATFORMS
 DEPENDENCIES
   jimson!
   rack-test
-  rack-timeout
   rake
   rcov
   rdoc (>= 2.4.2)
   rspec
 
 BUNDLED WITH
-   1.16.4
+   1.17.1
